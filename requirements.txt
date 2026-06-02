@@ -1,0 +1,11 @@
+selenium
+python-dotenv
+
+
+
+"""
+Usage:
+
+pip install -r requirements.txt
+
+"""

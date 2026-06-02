@@ -13,9 +13,7 @@ scraper.py  —  Stage 1: Instagram City + Niche Hashtag Scraper
 • Deduplicates across all sources before writing
 
 Usage:
-    python scraper.py scrape   →  scrape → append to raw_usernames.csv
-    python scraper.py reset    →  delete raw_usernames.csv then scrape fresh
-    python scraper.py show     →  print generated queries (dry-run, no browser)
+    python scraper.py  →  scrape → append to raw_usernames.csv
 
 """
 
@@ -714,15 +712,4 @@ def show_queries():
 
 
 if __name__ == "__main__":
-    cmd = sys.argv[1].lower() if len(sys.argv) > 1 else "help"
-    if   cmd == "scrape":
-        run_scraper()
-    elif cmd == "reset":
-        if RAW_CSV.exists():
-            RAW_CSV.unlink()
-            warn(f"Deleted {RAW_CSV.name}")
-        run_scraper()
-    elif cmd == "show":
-        show_queries()
-    else:
-        print(__doc__)
+    run_scraper()
